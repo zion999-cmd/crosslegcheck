@@ -6,6 +6,13 @@
 #include "usb_dbg.h"
 #include <usb_host.h>
 
+/* USER CODE BEGIN USB_DBG_INCLUDES */
+/* All custom logging/forwarding code in this file is placed inside
+  USER CODE blocks so CubeMX regenerations won't clobber our logic.
+  Keep related state and helpers in this file. */
+/* USER CODE END USB_DBG_INCLUDES */
+
+/* USER CODE BEGIN USB_DBG_CODE */
 // This file provides a small __io_putchar implementation so that
 // USBH_UsrLog / printf output is visible on the LCD HUD.
 // It accumulates characters into a short line buffer and, on '\n' or
@@ -149,3 +156,5 @@ void usb_dbg_printf(const char *fmt, ...)
   (void)fmt;
 }
 #endif
+
+/* USER CODE END USB_DBG_CODE */

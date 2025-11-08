@@ -1,3 +1,4 @@
+/* USER CODE BEGIN USB_DBG_UART */
 /* Non-blocking UART forwarder with ring buffer and DMA/IT fallback.
  * - Enqueue log lines into a TX ring buffer.
  * - If huart2->hdmatx is configured, use HAL_UART_Transmit_DMA to send
@@ -137,3 +138,5 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart) {
   uart_tx_busy = 0;
   uart_last_sent = 0;
 }
+
+/* USER CODE END USB_DBG_UART */

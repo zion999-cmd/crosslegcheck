@@ -26,6 +26,7 @@
 
 /* Circular buffer storing recent full log lines. Lines are null-terminated
  * and truncated to USB_LOG_LINE_SZ-1 when stored. */
+/* USER CODE BEGIN USB_DBG_DECLS */
 extern char usb_log_lines[USB_LOG_LINES][USB_LOG_LINE_SZ];
 extern volatile uint32_t usb_log_head; /* next write index */
 extern volatile uint32_t usb_log_count; /* number of stored lines (<= USB_LOG_LINES) */
@@ -33,6 +34,7 @@ extern volatile uint32_t usb_log_count; /* number of stored lines (<= USB_LOG_LI
 /* Short preview and timestamp used by legacy HUD code */
 extern char usb_last_event[64];
 extern volatile uint32_t usb_last_event_time_ms;
+/* USER CODE END USB_DBG_DECLS */
 
 /* Log categories (bitmask). Use these to enable/disable groups of logs at
  * runtime without changing the compile-time USBH debug level. */

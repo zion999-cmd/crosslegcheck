@@ -71,6 +71,7 @@ void CDC_DebugInfo_Display(void);
 // HUD 行缓存和简单行绘制函数
 /* Use more lines to occupy the full 240px height (font 8x16 -> 15 lines max).
  * Use 14 to leave a small margin. */
+/* USER CODE BEGIN HUD */
 #define HUD_LINES 14
 static char hud_last[HUD_LINES][64];
 static void hud_draw_line(int idx, uint16_t y, const char *fmt, ...) {
@@ -93,6 +94,7 @@ static void hud_draw_line(int idx, uint16_t y, const char *fmt, ...) {
     LCD_DrawString(0, y, buf, WHITE, DARK_BLUE);
   }
 }
+/* USER CODE END HUD */
 
 /* USER CODE BEGIN PFP */
 // 是否启用 USART2 手动 DMA
@@ -194,6 +196,7 @@ int main(void) {
   /* USER CODE END 3 */
 }
 
+/* USER CODE BEGIN CDC_DEBUG_DISPLAY */
 // CDC调试信息显示功能  
 void CDC_DebugInfo_Display(void) {
   /* Minimal HUD: show a single heartbeat/status line and avoid frequent redraws.
@@ -221,7 +224,9 @@ void CDC_DebugInfo_Display(void) {
                 (int)hUsbHostFS.EnumState,
                 (int)Appli_state);
 }
+/* USER CODE END CDC_DEBUG_DISPLAY */
 
+/* USER CODE BEGIN CDC_HANDLERS */
 // CDC接收回调函数
 void USBH_CDC_ReceiveCallback(USBH_HandleTypeDef *phost) {
   uint32_t rx_len = USBH_CDC_GetLastReceivedDataSize(phost);
@@ -264,9 +269,10 @@ void process_cdc_stream(void) {
     usb_dbg_uart_send((const char *)tmp, copied);
   }
 
+
   cdc_data_available = (cdc_stream_tail != cdc_stream_head) ? 1 : 0;
 }
-
+/* USER CODE END CDC_HANDLERS */
 
 
 // 系统配置函数

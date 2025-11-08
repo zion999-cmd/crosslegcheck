@@ -207,6 +207,35 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
   /* Enable USART2 interrupt for IT-based TX/RX fallback */
   HAL_NVIC_SetPriority(USART2_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(USART2_IRQn);
+  
+  /* Optional manual DMA initialization for USART2 TX.
+   * This is placed inside the USER CODE block so CubeMX regenerations
+   * won't remove or relocate the DMA setup. The DMA handle declaration
+   * itself is kept in the USER CODE PV section above. */
+#ifdef ENABLE_USART2_MANUAL_DMA
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  hdma_usart2_tx.Instance = DMA1_Stream0;
+  hdma_usart2_tx.Init.Request = DMA_REQUEST_USART2_TX;
+  hdma_usart2_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
+  hdma_usart2_tx.Init.PeriphInc = DMA_PINC_DISABLE;
+  hdma_usart2_tx.Init.MemInc = DMA_MINC_ENABLE;
+  hdma_usart2_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+  hdma_usart2_tx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+  hdma_usart2_tx.Init.Mode = DMA_NORMAL;
+  hdma_usart2_tx.Init.Priority = DMA_PRIORITY_LOW;
+  hdma_usart2_tx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+  if (HAL_DMA_Init(&hdma_usart2_tx) != HAL_OK) {
+    Error_Handler();
+  }
+
+  /* Link DMA handle to UART handle for TX path */
+  __HAL_LINKDMA(huart, hdmatx, hdma_usart2_tx);
+
+  /* Enable DMA IRQ (stream0) */
+  HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
+#endif
 
   /* USER CODE END USART2_MspInit 1 */
 
@@ -214,32 +243,6 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
 
 }
 
-
-    /* Manual DMA init is optional; enable by defining ENABLE_USART2_MANUAL_DMA */
-  #ifdef ENABLE_USART2_MANUAL_DMA
-    __HAL_RCC_DMA1_CLK_ENABLE();
-
-    hdma_usart2_tx.Instance = DMA1_Stream0;
-    hdma_usart2_tx.Init.Request = DMA_REQUEST_USART2_TX;
-    hdma_usart2_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
-    hdma_usart2_tx.Init.PeriphInc = DMA_PINC_DISABLE;
-    hdma_usart2_tx.Init.MemInc = DMA_MINC_ENABLE;
-    hdma_usart2_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
-    hdma_usart2_tx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
-    hdma_usart2_tx.Init.Mode = DMA_NORMAL;
-    hdma_usart2_tx.Init.Priority = DMA_PRIORITY_LOW;
-    hdma_usart2_tx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
-    if (HAL_DMA_Init(&hdma_usart2_tx) != HAL_OK) {
-      Error_Handler();
-    }
-
-    /* Link DMA handle to UART handle for TX path */
-    __HAL_LINKDMA(huart, hdmatx, hdma_usart2_tx);
-
-    /* Enable DMA IRQ (stream0) */
-    HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 5, 0);
-    HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
-  #endif
 
 /**
   * @brief UART MSP De-Initialization
