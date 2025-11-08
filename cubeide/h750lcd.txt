@@ -1,0 +1,86 @@
+Configuration	h750lcd
+STM32CubeMX 	6.14.1
+Date	11/06/2025
+MCU	STM32H750VBTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+DEBUG	Serial Wire	DEBUG_JTCK-SWCLK	PA14 (JTCK/SWCLK)
+DEBUG	Serial Wire	DEBUG_JTMS-SWDIO	PA13 (JTMS/SWDIO)
+SPI2	Full-Duplex Master	SPI2_MISO	PB14
+SPI2	Full-Duplex Master	SPI2_MOSI	PB15
+SPI2	Full-Duplex Master	SPI2_SCK	PB13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+USB_OTG_FS	Host_Only	USB_OTG_FS_DM	PA11
+USB_OTG_FS	Host_Only	USB_OTG_FS_DP	PA12
+USB_OTG_FS	VBUS sensing	USB_OTG_FS_VBUS	PA9
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+23	PA1	GPIO_Output	
+34	PB0	GPIO_Output	
+35	PB1	GPIO_Output	
+51	PB12	GPIO_Output	
+52	PB13	SPI2_SCK	
+53	PB14	SPI2_MISO	
+54	PB15	SPI2_MOSI	
+68	PA9	USB_OTG_FS_VBUS	
+70	PA11	USB_OTG_FS_DM	
+71	PA12	USB_OTG_FS_DP	
+72	PA13 (JTMS/SWDIO)	DEBUG_JTMS-SWDIO	
+76	PA14 (JTCK/SWCLK)	DEBUG_JTCK-SWCLK	
+PERIPHERALS	MODES	FUNCTIONS	PINS
+DEBUG	Serial Wire	DEBUG_JTCK-SWCLK	PA14 (JTCK/SWCLK)
+DEBUG	Serial Wire	DEBUG_JTMS-SWDIO	PA13 (JTMS/SWDIO)
+SPI2	Full-Duplex Master	SPI2_MISO	PB14
+SPI2	Full-Duplex Master	SPI2_MOSI	PB15
+SPI2	Full-Duplex Master	SPI2_SCK	PB13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+USB_OTG_FS	Host_Only	USB_OTG_FS_DM	PA11
+USB_OTG_FS	Host_Only	USB_OTG_FS_DP	PA12
+USB_OTG_FS	VBUS sensing	USB_OTG_FS_VBUS	PA9
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+23	PA1	GPIO_Output	
+34	PB0	GPIO_Output	
+35	PB1	GPIO_Output	
+51	PB12	GPIO_Output	
+52	PB13	SPI2_SCK	
+53	PB14	SPI2_MISO	
+54	PB15	SPI2_MOSI	
+68	PA9	USB_OTG_FS_VBUS	
+70	PA11	USB_OTG_FS_DM	
+71	PA12	USB_OTG_FS_DP	
+72	PA13 (JTMS/SWDIO)	DEBUG_JTMS-SWDIO	
+76	PA14 (JTCK/SWCLK)	DEBUG_JTCK-SWCLK	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : h750lcd
+Project Folder : /Users/bx/Workspace/crosslegcheck/cubeide
+Toolchain / IDE : STM32CubeIDE
+Firmware Package Name and Version : STM32Cube FW_H7 V1.12.1
+
+
+Code Generation Settings : 
+STM32Cube MCU packages and embedded software packs : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+

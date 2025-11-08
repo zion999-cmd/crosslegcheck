@@ -1,0 +1,63 @@
+{
+    "configurations": [
+        {
+            "name": "STM32H750",
+            "includePath": [
+                "${workspaceFolder}/cubeide/Core/Inc",
+                "${workspaceFolder}/cubeide/Core/Src",
+                "${workspaceFolder}/cubeide/USB_HOST/App",
+                "${workspaceFolder}/cubeide/USB_HOST/Target",
+                "${workspaceFolder}/cubeide/Drivers/STM32H7xx_HAL_Driver/Inc",
+                "${workspaceFolder}/cubeide/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
+                "${workspaceFolder}/cubeide/Drivers/CMSIS/Device/ST/STM32H7xx/Include",
+                "${workspaceFolder}/cubeide/Drivers/CMSIS/Include",
+                "${workspaceFolder}/cubeide/Middlewares/ST/STM32_USB_Host_Library/Core/Inc",
+                "${workspaceFolder}/cubeide/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc",
+                "/Users/bx/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Drivers/STM32H7xx_HAL_Driver/Inc",
+                "/Users/bx/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
+                "/Users/bx/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Drivers/CMSIS/Device/ST/STM32H7xx/Include",
+                "/Users/bx/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Drivers/CMSIS/Include",
+                "/Users/bx/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Middlewares/ST/STM32_USB_Host_Library/Core/Inc",
+                "/Users/bx/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Middlewares/ST/STM32_USB_Host_Library/Class/CDC/Inc"
+            ],
+            "defines": [
+                "USE_HAL_DRIVER",
+                "STM32H750xx",
+                "USE_FULL_ASSERT",
+                "__weak=__attribute__((weak))",
+                "__packed=__attribute__((__packed__))",
+                "ARM_MATH_CM7",
+                "USE_USB_HS",
+                "USE_USB_HS_IN_FS"
+            ],
+            "compilerPath": "/usr/local/bin/arm-none-eabi-gcc",
+            "cStandard": "c99",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "gcc-arm",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/cubeide",
+                    "${workspaceFolder}/cubeide/Core",
+                    "${workspaceFolder}/cubeide/USB_HOST",
+                    "${workspaceFolder}/cubeide/Drivers",
+                    "${workspaceFolder}/cubeide/Middlewares",
+                    "/Users/bx/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Drivers",
+                    "/Users/bx/STM32Cube/Repository/STM32Cube_FW_H7_V1.12.1/Middlewares"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "compilerArgs": [
+                "-mcpu=cortex-m7",
+                "-mthumb",
+                "-mfpu=fpv5-d16",
+                "-mfloat-abi=hard",
+                "-Wall",
+                "-fdata-sections",
+                "-ffunction-sections",
+                "-g",
+                "-gdwarf-2"
+            ]
+        }
+    ],
+    "version": 4
+}

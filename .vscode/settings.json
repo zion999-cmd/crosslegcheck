@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "*.backup": "cpp",
+        "usb_host.h": "c",
+        "stm32h7xx.h": "c"
+    }
+}

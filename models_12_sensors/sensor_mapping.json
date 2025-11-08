@@ -1,0 +1,87 @@
+{
+  "sensor_positions": [
+    48,
+    80,
+    112,
+    176,
+    87,
+    103,
+    88,
+    89,
+    104,
+    105,
+    91,
+    107
+  ],
+  "sensor_grid_positions": [
+    [
+      3,
+      0
+    ],
+    [
+      5,
+      0
+    ],
+    [
+      7,
+      0
+    ],
+    [
+      11,
+      0
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      5,
+      9
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      6,
+      9
+    ],
+    [
+      5,
+      11
+    ],
+    [
+      6,
+      11
+    ]
+  ],
+  "sensor_names": [
+    "Sensor_48",
+    "Sensor_80",
+    "Sensor_112",
+    "Sensor_176",
+    "Sensor_87",
+    "Sensor_103",
+    "Sensor_88",
+    "Sensor_89",
+    "Sensor_104",
+    "Sensor_105",
+    "Sensor_91",
+    "Sensor_107"
+  ],
+  "description": "\u57fa\u4e8e\u6570\u636e\u5206\u6790\u4f18\u5316\u768412\u4f20\u611f\u5668\u5e03\u5c40",
+  "optimization_date": "2025-11-03",
+  "performance": {
+    "logistic_regression_accuracy": "95.2%",
+    "random_forest_accuracy": "97.2%",
+    "vs_256_sensors": "\u6027\u80fd\u4fdd\u6301\u6216\u63d0\u5347"
+  }
+}
